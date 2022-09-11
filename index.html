@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 1 | homework</title>
+    <title>Les 3</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <p class="text"></p>
+    <button type="button" id="showButton">Show verification</button>
+    <div class="container">
+        <div class="wrapper">
+            <div class="requirements">
+                <h2>Enter verification</h2>
+                <form id="form">
+                    <input id="inputName" type="text" required placeholder="Name" autocomplete="off">
+                    <input id="inputSurname" type="text" required placeholder="Surname" autocomplete="off">
+                    <input id="inputAge" type="number" required placeholder="Age" autocomplete="off">
+                    <input id="inputEmail" type="email" required placeholder="Email" autocomplete="off">
+                    <input id="inputNumber" type="tel" required placeholder="Number" autocomplete="off">
+                    <div class="last-line">
+                        <div>
+                            <label class="label">I'm not a robot</label>
+                            <input class="checkbox" type="checkbox" required="required">
+                        </div>
+                       
+                       <button type="submit" id="btnVerify">Verify</button>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="local-storage">
+                <span>Local Storage:</span>
+                <div id="lsOutput"></div>
+            </div>
+        </div>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 </html>
