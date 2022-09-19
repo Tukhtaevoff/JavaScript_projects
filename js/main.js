@@ -1,52 +1,68 @@
-const inputName = document.getElementById("inputName");
-const inputSurname = document.getElementById("inputSurname");
-const inputAge = document.getElementById("inputAge");
-const inputEmail = document.getElementById("inputEmail");
-const inputNumber = document.getElementById("inputNumber");
+const formEl = document.getElementById("form");
 
-const showButton = document.getElementById("showButton");
-const formEl = document.getElementById("form")
-const lsOutput = document.getElementById("lsOutput")
-const containerEl = document.querySelector(".container")
-const removeBtn = document.querySelector(".remove");
+const info = [];
 
+let listEl = document.querySelector(".list");
 
-let confirmEl = confirm('Are you going to begin?');
+formEl.addEventListener("submit", evt => {
+  evt.preventDefault();
 
-if (confirmEl) {
-    alert("Do you really want to begin?");
-}
+  const elements = event.target.elements;
+  const nameInputVal = elements.name.value;
+  const lastnameInputVal = elements.lastname.value;
+  const emailInputVal = elements.email.value;
+  const passwordInputVal = elements.password.value;
 
-showButton.addEventListener("click", function() {
-    document.body.style.transition = "2s";
-    document.body.style.backgroundColor = "#1d2b3a";
-    containerEl.style.transition = "2s"
-    containerEl.style.display = "block";
-    showButton.style.transition = "2s";
-    showButton.style.transform = "translateX(-300px)";
-    
-})
-formEl.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const nameEl = inputName.value;
-    const surnameEl = inputSurname.value;
-    const ageEl = inputAge.value;
-    const emailEl = inputEmail.value;
-    const numberEl = inputNumber.value;
-
-    localStorage.setItem("Name", nameEl);
-    localStorage.setItem("Surname", surnameEl);
-    localStorage.setItem("Age", ageEl);
-    localStorage.setItem("Email", emailEl);
-    localStorage.setItem("Number", numberEl);
-    
-    if (ageEl <= 0 || ageEl > 120) {
-        alert("Sorry, It's impossible to be at the age of" + " " + ageEl);
+    if (nameInputVal && lastnameInputVal && emailInputVal && passwordInputVal) {
+      const newObj = {
+        name: nameInputVal,
+        lastName: lastnameInputVal,
+        email: emailInputVal,
+        password: passwordInputVal
+      }
+      info.push(newObj);
     }
 
+    let displayUI = ``;
+  info.map(value => {
+    
+      displayUI += `
+      <li class="list__item bg-primary text-white">
+      <b>${value.name}</b>
+      <span>${value.lastName}</span>
+      <p>${value.email}</p>
+      <em>${value.password}</em>
+      </li>
+      `
+  });
 
-    lsOutput.innerHTML += `Your name is ${nameEl} <br /> Your surname is ${surnameEl}  <br /> Your are ${ageEl} old  <br /> Your email is ${emailEl}  <br /> Your number is ${numberEl} <br>`;
+  listEl.innerHTML = displayUI;
 
-    formEl.reset();
+  formEl.reset();
 })
 
+const searchForm = document.getElementById("search-form");
+
+searchForm.addEventListener("submit", evt => {
+  evt.preventDefault();
+
+  const searchInputVal = evt.target.elements.search.value;
+
+  let displayUI = ``;
+
+  info.map(value => {
+      if (searchInputVal == value.name) {
+        displayUI += `
+        <li class="list__item bg-primary text-white">
+        <b>${value.name}</b>
+        <span>${value.lastName}</span>
+        <p>${value.email}</p>
+        <em>${value.password}</em>
+        </li>
+        `
+      }
+  })
+  listEl.innerHTML = displayUI;
+
+  searchForm.reset();
+})
