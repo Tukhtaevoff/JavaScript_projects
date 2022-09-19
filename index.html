@@ -4,30 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 7 | Hometask</title>
+    <title>Search bar</title>
     <link rel="stylesheet" href="./style/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<body>
-    <form id="form" class="p-4 bg-white container mt-2">
-        <input type="text" class="form-control m-auto mt-3" name="name" id="name" autocomplete="off" required placeholder="Please enter your name">
-        <input type="text" class="form-control m-auto mt-3" name="lastname" id="lastname" autocomplete="off" required placeholder="Please enter your lastname">
-        <input type="email" class="form-control m-auto mt-3" name="email" id="email" autocomplete="off" required placeholder="Please enter your email">
-        <input type="password" class="form-control m-auto mt-3" name="password" id="password" autocomplete="off" required minlength="8" placeholder="Please enter your password">
-        <button type="submit" class="btn btn-success pt-1 pb-1 text-center m-auto mt-3">
-            Sign up 
-        </button>
-    </form>
-    <form id="search-form">
-        <input type="search" id="search" autocomplete="off" placeholder="Search 🔍" class="search form-control p-5 fs-5 pt-2 pb-2">
-        <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-    
-    <ul class="list">
+<body style="background-color: rgb(113, 177, 200);">
+    <div class="container">
+        <div style="display: flex; max-width: 450px; margin: 0 auto;">
+            <button style="padding: 5px 15px; max-width: 100px; height: 40px; margin-top: 10px;" type="button" class="btn btn-white btn-outline-danger form-control" id="all">All</button>
+            <select id="sort" style="width: 200px; height: 35px; margin: 0 auto; margin-top: 15px;" class="form-select" aria-label="Default select example">
+                <option selected>Select</option>
+                <option value="Bugatti">Bugatti</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Lamborghini">Lamborghini</option>
+            </select>
+            <button style="margin-top: 10px; max-width: 100px;" class="form-control btn form-btn btn-outline-success" type="button" id="filter-btn">Filter</button>
+        </div>
+        
+        <form style="display: flex; gap: 20px; align-items: center; max-width: 900px; margin: 0 auto;" id="search-form">
+            <input class="form-control" style="max-width: 800px; height: 40px; margin: 0 auto; margin-top: 20px;" type="search" id="search" autocomplete="off" placeholder="Search name" required>
+            <button class="btn btn-outline-primary form-control" style="height: 40px; max-width: 120px; margin-top: 20px;" type="submit">Search</button>
+        </form>
+    </div>
+
+    <ul class="list-group" style="margin-top: 100px;" id="list">
 
     </ul>
     <script src="./js/main.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
