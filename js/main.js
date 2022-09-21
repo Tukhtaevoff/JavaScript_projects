@@ -92,6 +92,50 @@ allBtn.addEventListener("click", function () {
 
 sortFunc.addEventListener("change", function (evt) {
     let displayUI = ``;
+
+    // if (this.value === "Bugatti") {
+    //     cars.map(function (item) {
+    //         if (item.name === "Bugatti") {
+    //             displayUI += `
+    //             <li class="list__item">
+    //             <h2 class="name">${item.name}</h2>
+    //             <img class="img" src="${item.img}">
+    //             <p>${item.desc}</p>
+    //             <strong>Price: ${item.price} $</strong>
+    //             </li>
+    //             `;
+    //             listEl.innerHTML = displayUI;
+    //         }
+    //     })
+    // } else if (this.value === "Mercedes") {
+    //     cars.map(function (item) {
+    //         if (item.name === "Mercedes") {
+    //             displayUI += `
+    //             <li class="list__item">
+    //             <h2 class="name">${item.name}</h2>
+    //             <img class="img" src="${item.img}">
+    //             <p>${item.desc}</p>
+    //             <strong>Price: ${item.price} $</strong>
+    //             </li>
+    //             `;
+    //             listEl.innerHTML = displayUI;
+    //         }
+    //     })
+    // } else if (this.value === "Lamborghini") {
+    //     cars.map(function (item) {
+    //         if (item.name === "Lamborghini") {
+    //             displayUI += `
+    //             <li class="list__item">
+    //             <h2 class="name">${item.name}</h2>
+    //             <img class="img" src="${item.img}">
+    //             <p>${item.desc}</p>
+    //             <strong>Price: ${item.price} $</strong>
+    //             </li>
+    //             `;
+    //             listEl.innerHTML = displayUI;
+    //         }
+    //     })
+    // }
     switch(this.value) {
         case "Bugatti":
             cars.map(function (item) {
