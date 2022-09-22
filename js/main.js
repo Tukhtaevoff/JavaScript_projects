@@ -7,7 +7,7 @@ let listEl = document.querySelector(".list");
 formEl.addEventListener("submit", evt => {
   evt.preventDefault();
 
-  const elements = event.target.elements;
+  const elements = evt.target.elements;
   const nameInputVal = elements.name.value;
   const lastnameInputVal = elements.lastname.value;
   const emailInputVal = elements.email.value;
