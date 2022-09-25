@@ -4,11 +4,13 @@ const nameForm = document.getElementById("formName");
 const nameInput = document.getElementById("inputName");
 const listItem = document.querySelectorAll("#list__item");
 
+listEl.style.listStyle = "none";
+
 let info = {
     going : ["Bus", "Car", "Underground", "Bike"],
     clothes: ["Trousers", "Shirt", "T-shirt", "Short", "Shoes", "Sneakers", "Hat", "Socks", "Jeans"],
     colors: ["White", "Black", "Lightblue", "Blue", "Red", "Darkred", "Gray", "Brown", "Yellow", "Green"],
-}
+};
 
 let isShopOpen = true;
 
@@ -28,15 +30,15 @@ nameForm.addEventListener("submit", (evt) => {
             return new Promise ((resolve, reject) => {
                 if (isShopOpen) {
                     setTimeout(() => {
-                        resolve(work())
-                    }, time)
+                        resolve(work());
+                    }, time);
                 } else {
-                    reject(listItem[0].textContent = "Sorry, our shop is closed")
+                    reject(listItem[0].textContent = "Sorry, our shop is closed");
                 }
-            })
-        }
+            });
+        };
         
-        order(2000, productionWork)
+        order(2000, productionWork);
         
         function productionWork() {
             setTimeout(() => {
@@ -54,7 +56,7 @@ nameForm.addEventListener("submit", (evt) => {
                         } else if (optionTrans === "metro" || optionTrans === "Underground") {
                             listItem[3].innerHTML = `Ok, You selected ${optionTrans} 🚇`;
                         } else {
-                            listItem[3].innerHTML = `Ok, You selected ${optionTrans} 🚗`
+                            listItem[3].innerHTML = `Ok, You selected ${optionTrans} 🚗`;
                         }
                         setTimeout(() => {
                             listItem[4].innerHTML = `You have arrived at clothes store 🏬`;
@@ -69,7 +71,7 @@ nameForm.addEventListener("submit", (evt) => {
                                             listItem[7].innerHTML = `Good job ${nameInput.value}, You have chosen ${productPrompt}`;
                                         }
                                         setTimeout(() => {
-                                            listItem[8].innerHTML = `And now, You should choose the colors of ${productPrompt}`
+                                            listItem[8].innerHTML = `And now, You should choose the colors of ${productPrompt}`;
                                             setTimeout(() => {
                                                 let colorRan = randomColors();
                                                 const colorsPrompt = prompt(`Write down colors that you want! For example: ${info.colors[colorRan]} T shirt, ${info.colors[colorRan]} trousers, ${info.colors[colorRan]} Short`);
@@ -85,41 +87,41 @@ nameForm.addEventListener("submit", (evt) => {
                                                         } else {
                                                             listItem[11].innerHTML = `If you agree for the price 💲, I'm happy and I wish you wear that you bought for years😇`;
                                                             setTimeout(() => {
-                                                                listItem[12].innerHTML = `Good bye ${nameInput.value}, I wish we will meet again👋`
+                                                                listItem[12].innerHTML = `Good bye ${nameInput.value}, I wish we will meet again👋`;
                                                             listItem[11].style.display = "none";
                                                             }, 3000);
                                                         }
                                                         listItem[10].style.display = "none";
-                                                    }, 3000)
+                                                    }, 3000);
                                                     listItem[9].style.display = "none";
-                                                }, 3000)
+                                                }, 3000);
                                                 listItem[8].style.display = "none";
-                                            }, 3000)
+                                            }, 3000);
                                             listItem[7].style.display = "none";
-                                        }, 3000)
+                                        }, 3000);
                                         listItem[6].style.display = "none";
-                                    }, 3000)
+                                    }, 3000);
                                     listItem[5].style.display = "none";
-                                }, 3000)
+                                }, 3000);
                                 listItem[4].style.display = "none";
-                            }, 3000)
+                            }, 3000);
                             listItem[3].style.display = "none";
-                        }, 3000)
+                        }, 3000);
                         listItem[2].style.display = "none";
-                    }, 3000)
+                    }, 3000);
                     listItem[1].style.display = "none";
                    }, 3000);
                    listItem[0].style.display = "none";
-                }, 3000)
-            }, 0)
-        }
+                }, 2000);
+            }, 0);
+        };
     }
-})
+});
 
 let expenses = () => {
     return Math.floor(Math.random() * 200);
-}
+};
 
 let randomColors = () => {
     return Math.floor(Math.random() * info.colors.length);
-}
+};
