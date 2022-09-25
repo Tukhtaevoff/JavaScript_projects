@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic&display=swap');
+
+* {
+    color: #fff;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Livvic', sans-serif;
+    background: linear-gradient(to right, darkblue, darkred);
+    overflow: hidden;
+}
+form{
+    text-align: center;
+    max-width: 600px;
+    margin: 200px auto;
+}
+form label {
+    font-size: 2rem;
+}
+.namecontrol{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+#inputName{
+    flex: 9;
+    font-weight: 700;
+}
+.btn-outline-primary{
+    flex: 3;
+}
+#list {
+    list-style: none;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+#list__item{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 300px;
+}
